@@ -27,3 +27,20 @@ services:
       file: ../rest-service/docker-compose.yml
       service: rest-db
     env_file: .env
+    
+  soap-service:
+    extends:
+      file: ../soap-service/docker-compose.yml
+      service: soap-service
+    env_file: .env
+  soap-db:
+    extends:
+      file: ../soap-service/docker-compose.yml
+      service: soap-db
+    env_file: .env
+
+  client-webpage:
+    extends:
+      file: ../client-webpage/docker-compose.yml
+      service: client-webpage
+    env_file: .env
