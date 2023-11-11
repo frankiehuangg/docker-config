@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  monolithic-web:
+    extends:
+      file: ../monolithic-service/docker-compose.yml
+      service: monolithic-web
+    env_file: .env
+  monolithic-db:
+    extends: 
+      file: ../monolithic-service/docker-compose.yml
+      service: monolithic-db
+    env_file: .env
+  monolithic-adminer:
+    extends:
+      file: ../monolithic-service/docker-compose.yml
+      service: monolithic-adminer
+    env_file: .env
+  
+  rest-service:
+    extends:
+      file: ../rest-service/docker-compose.yml
+      service: rest-service
+    env_file: .env
+  rest-db:
+    extends:
+      file: ../rest-service/docker-compose.yml
+      service: rest-db
+    env_file: .env
